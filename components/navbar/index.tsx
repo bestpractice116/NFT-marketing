@@ -4,7 +4,6 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import ActiveLink from 'components/link'
 
-
 const navigation = [
   { name: 'Marketplace', href: '/', current: true },
   { name: 'Create', href: '/nft/create', current: false },
@@ -131,7 +130,7 @@ export default function Example() {
               </div>
             </div>
           </div>
-          
+          {/* Disclosure */}
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pt-2 pb-3">
               {navigation.map((item) => (

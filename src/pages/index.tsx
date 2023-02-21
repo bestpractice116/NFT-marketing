@@ -5,7 +5,6 @@ import {BaseLayout ,  NftList } from 'components'
 import nfts from "content/meta.json"
 import { NftMeta } from '@_types/nft'
 
-
 const Home: NextPage = () => {
   return (
     <BaseLayout>
