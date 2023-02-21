@@ -16,8 +16,7 @@ const NftList: FunctionComponent<NftListProps> = ({nfts}) => {
                     />
                 </div>
             )}
-
-      </div>
+        </div>
     )
 }
 
