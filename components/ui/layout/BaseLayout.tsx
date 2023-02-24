@@ -1,5 +1,5 @@
 
-import { Navbar } from "components";
+import { Navbar } from "@ui";
 import { FunctionComponent, ReactNode } from "react";
 
 interface BaseLayoutProps {
