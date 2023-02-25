@@ -1,6 +1,7 @@
 import { NftMeta } from "@_types/nft"
 import { FunctionComponent } from "react"
 
+
 type NftItemProps = {
     item: NftMeta,
 }
@@ -32,7 +33,7 @@ const NftItem: FunctionComponent<NftItemProps> = ({item}) => {
                   <dd className="order-1 text-xl font-extrabold text-indigo-600">
                     <div className="flex justify-center items-center">
                       100
-                      {<img className="h-6" src="./images/small-eth.webp"/> }
+                      {<img className="h-6" src="eth-logo.png"/> }
                     </div>
                   </dd>
                 </div>
