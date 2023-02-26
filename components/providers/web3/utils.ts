@@ -1,6 +1,5 @@
 import {MetaMaskInpageProvider} from "@metamask/providers";
-import { Contract, BrowserProvider, Provider } from "ethers";
-
+import { Contract, BrowserProvider } from "ethers";
 declare global {
     interface Window{
         ethereum: MetaMaskInpageProvider;
@@ -23,5 +22,27 @@ export const createDefaultState = () => {
         provider: null,
         contract: null,
         isLoading: true
+    }
+}
+
+const NETWORK_ID = process.env.NEXT_PUBLIC_NETWORK_ID;
+
+export const loadContract = async (name: string, provider: BrowserProvider): Promise<Contract> => {
+    if(!NETWORK_ID){
+        return Promise.reject("Network ID is not defined!");
+    }
+
+    const res = await fetch(`/contracts/${name}.json`);
+    const Artifact = await res.json();
+
+    if(Artifact.networks[NETWORK_ID].address){
+        const contract = new Contract(
+            Artifact.networks[NETWORK_ID].address,
+            Artifact.abi,
+            provider
+        )
+        return contract;
+    } else {
+        return Promise.reject(`Contract: [${name}] cannot be loaded`);
     }
 }
