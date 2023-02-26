@@ -31,7 +31,7 @@ export const loadContract = async (name: string, provider: BrowserProvider): Pro
     if(!NETWORK_ID){
         return Promise.reject("Network ID is not defined!");
     }
-
+    
     const res = await fetch(`/contracts/${name}.json`);
     const Artifact = await res.json();
 
