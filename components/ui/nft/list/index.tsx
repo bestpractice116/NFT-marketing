@@ -2,11 +2,11 @@ import { NftMeta } from "@_types/nft"
 import { FunctionComponent } from "react"
 import NftItem from "../item"
 
-type NftListProps = {
+type NftProps = {
     nfts: NftMeta[]
 }
 
-const NftList: FunctionComponent<NftListProps> = ({nfts}) => {
+const NftList: FunctionComponent<NftProps> = ({nfts}) => {
     return (
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
             {nfts.map(nft => 
