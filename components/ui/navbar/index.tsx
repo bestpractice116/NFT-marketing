@@ -15,7 +15,9 @@ function classNames(...classes: string[]) {
 }
 
 export default function Example() {
-  const { data } = useAccount("rand")
+  const { data } = useAccount("rand");
+
+  console.log(data);
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
