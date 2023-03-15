@@ -1,3 +1,4 @@
+import { setupHooks, Web3Hooks } from "@hooks/web3/setupHooks";
 import {MetaMaskInpageProvider} from "@metamask/providers";
 import { Contract, BrowserProvider } from "ethers";
 declare global {
@@ -14,6 +15,7 @@ export type Web3Params = {
 
 export type Web3State = {
     isLoading: boolean;
+    hooks: Web3Hooks;
 } & Web3Params;
 
 export const createDefaultState = () => {
@@ -21,7 +23,8 @@ export const createDefaultState = () => {
         ethereum: null,
         provider: null,
         contract: null,
-        isLoading: true
+        isLoading: true,
+        hooks: setupHooks({} as any)
     }
 }
 
