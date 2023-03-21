@@ -1,6 +1,6 @@
 ## Getting Started
 
-Run the development server.
+Run the development serve
 
 ```bash
 npm run dev
