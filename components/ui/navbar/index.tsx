@@ -20,6 +20,7 @@ export default function Example() {
 
 
   console.log(account.data);
+  console.log(account.error);
 
   return (
     <Disclosure as="nav" className="bg-gray-800">
